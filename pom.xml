@@ -7,19 +7,32 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<build>
-		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.13.0</version>
-				<configuration>
-					<release>19</release>
-				</configuration>
-			</plugin>
-			<plugin>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>3.2.3</version>
-			</plugin>
-		</plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-dependency-plugin</artifactId>
+			<version>3.5.0</version>
+			<executions>
+				<execution>
+					<id>copy-webapp-runner</id>
+					<phase>package</phase>
+					<goals>
+						<goal>copy</goal>
+					</goals>
+					<configuration>
+						<artifactItems>
+							<artifactItem>
+								<groupId>com.github.jsimone</groupId>
+								<artifactId>webapp-runner</artifactId>
+								<version>9.0.79.0</version>
+								<destFileName>webapp-runner.jar</destFileName>
+							</artifactItem>
+						</artifactItems>
+						<outputDirectory>${project.build.directory}/dependency</outputDirectory>
+					</configuration>
+				</execution>
+			</executions>
+		</plugin>
+
 	</build>
 
 	<dependencies>
