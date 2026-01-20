@@ -62,12 +62,6 @@
 			<artifactId>jakarta.servlet.jsp.jstl</artifactId>
 			<version>3.0.1</version>
 		</dependency>
-		<dependency>
-			<groupId>com.github.jsimone</groupId>
-			<artifactId>webapp-runner</artifactId>
-			<version>9.0.79.0</version>
-			<scope>provided</scope>
-		</dependency>
 
 
 	</dependencies>
