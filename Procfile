@@ -1,0 +1,1 @@
+java -jar target/dependency/webapp-runner.jar target/HealthSAS-1.0.0-SNAPSHOT.war
